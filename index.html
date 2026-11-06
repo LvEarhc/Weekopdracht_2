@@ -1,13 +1,77 @@
-<!doctype html>
-<html lang="nl">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mijn website</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeclub</title>
+    <script>
+        function openmenu(){
+            if (document.getElementById("signin").style.display=="block" && document.getElementById("success").style.display=="none"){
+                document.getElementById("signin").style.display="none";
+            } else {
+                document.getElementById("signin").style.display="block";
+            }
+        }
+        function confirm(){
+            const year = document.getElementById('year');
+            const name = document.getElementById('name');
+            const lastname = document.getElementById('lastname');
+            const tv = document.getElementById('tv')
+            const lln = document.getElementById('lln')
+            if (name.value && name.value.trim() !== '' && year.value !== "none") {
+                if (lastname.value && lastname.value.trim() !== ''){
+                    if (lln.value && lln.value.trim() !== ''){
+                    document.getElementById("signin").style.display="none";
+                    document.getElementById("begin").style.display="none";
+                    document.getElementById("success").style.display="block";
+                    document.getElementById("success").innerHTML="Je bent nu aangemeld als "+name.value+" "+tv.value+" "+lastname.value+" onder het leerlingnummer "+lln.value;
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <h1>Mijn website</h1>
-  <script src="script.js"></script>
+<body style="text-align: center; align-items: center; background-color: rgb(228, 255, 232); height: 1000px;">
+    <img src="ARHC.jpeg" alt="" style="outline: auto;">
+    <h1>Kom naar Codeclub!</h1>
+    <br>
+    <br>
+    <br>
+    <p>Hou jij ook van coderen en ben je op zoek naar een plek om vrij aan je eigen projecten te werken? Kom dan naar codeclub.</p>
+    <p>Codeclub vindt elke vrijdag om 15:00 plaats in F7. Hier krijg je de vrijheid om zelf projecten te bedenken en ook kan je anderen om hulp vragen.</p>
+    <p>Je kan ook hulp en advies vragen bij de aanwezige informatica docent.</p>
+    <br>
+    <br>
+    <button id="begin" onclick="openmenu()" style="width: 100px; height: 50px; font-size: 16px; text-align: center; font-weight: bolder; background-color:rgb(0, 0, 0); color: rgb(255, 255, 255);">Aanmelden</button>
+    <br>
+    <br>
+    <div id="signin" style="display: none; outline: auto; background-color:rgb(99, 255, 115); block-size: 450px; inline-size: 200px; margin: 0 auto; display: none; align-items: center; justify-content: center;">
+        <br>
+        <p style="font-weight: bold; color: rgb(0, 0, 0);">Jaar</p>
+        <select name="jaar" id="year" style="outline: auto; outline-offset: 2px; background-color: rgb(0, 144, 38); width: 100px; color: rgb(0, 0, 0); font-weight: bold; outline-color: black; color: white;" required>
+                <option value="none" disabled selected>Jaar</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+        </select>
+        <br>
+        <p style="font-weight: bold; color: rgb(0, 0, 0);">Naam</p>
+        <input type="text" name="Naam" id="name" required>
+        <br>
+        <p style="font-weight: bold; color: rgb(0, 0, 0);">Tussenvoegsel (Optioneel)</p>
+        <input type="text" name="Tussenvoegsel" id="tv">
+        <br>
+        <p style="font-weight: bold; color: rgb(0, 0, 0);">Achternaam</p>
+        <input type="text" name="Achternaam" id="lastname" required>
+        <br>
+        <p style="font-weight: bold; color: rgb(0, 0, 0);">Leerlingnummer</p>
+        <input type="text" name="Leerlingnummer" id="lln" required>
+        <br>
+        <button type="submit" onclick="confirm()">Aanmelden</button>
+    </div>
+    <title id="success" style="display: none; font-size: larger; font-weight: bolder;"></title>
 </body>
 </html>
