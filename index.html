@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codeclub</title>
     <script>
-        const API = ' https://storage.arhc.informatica.gsf.nl/api';
-        const KEY = 'ece65a867a42372a7ee576246a9dd93fbb8246c4b6d24b01';
-
         function openmenu(){
             if (document.getElementById("signin").style.display=="block" && document.getElementById("success").style.display=="none"){
                 document.getElementById("signin").style.display="none";
@@ -21,6 +18,8 @@
             const lastname = document.getElementById('lastname');
             const tv = document.getElementById('tv')
             const lln = document.getElementById('lln')
+            const API = ' https://storage.arhc.informatica.gsf.nl/api';
+            const KEY = 'ece65a867a42372a7ee576246a9dd93fbb8246c4b6d24b01';
             if (name.value && name.value.trim() !== '' && year.value !== "none") {
                 if (lastname.value && lastname.value.trim() !== ''){
                     if (lln.value && lln.value.trim() !== ''){
