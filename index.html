@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codeclub</title>
     <script>
+        const API = ' https://storage.arhc.informatica.gsf.nl/api';
+        const KEY = 'ece65a867a42372a7ee576246a9dd93fbb8246c4b6d24b01';
+
         function openmenu(){
             if (document.getElementById("signin").style.display=="block" && document.getElementById("success").style.display=="none"){
                 document.getElementById("signin").style.display="none";
@@ -25,6 +28,13 @@
                     document.getElementById("begin").style.display="none";
                     document.getElementById("success").style.display="block";
                     document.getElementById("success").innerHTML="Je bent nu aangemeld als "+name.value+" "+tv.value+" "+lastname.value+" onder het leerlingnummer "+lln.value;
+                    async function opslaan() {
+                        await fetch(API + '/data', {
+                          method: 'POST',
+                          headers: { 'X-API-Key': KEY, 'Content-Type': 'application/json' },
+                          body: JSON.stringify({ key: 'gegevens', value: "Naam: " + name.value+" "+tv.value+" " +lastname.value+". LLN: "+lln.value;})
+                        });
+                      }
                     }
                 }
             }
