@@ -259,4 +259,18 @@ Geen websitebestanden gewijzigd.
 Geen websitebestanden gewijzigd.
 
 </details>
+
+<details>
+<summary>20-11-2026 11:41:07 (UTC+01:00) | Opslaan | LvEarhc | 1 gewijzigde bestanden (+12/−1)</summary>
+
+- **Uitgevoerd door:** LvEarhc
+- **Branch:** main
+- **Websitebestanden na deze actie:** 4
+- **Vorige opgeslagen versie:** [41996d3ccd7761f777d78830edd4cd90e604367c](https://github.com/LvEarhc/Weekopdracht_2/commit/41996d3ccd7761f777d78830edd4cd90e604367c)
+
+| Bestand | Wijziging | Toegevoegd | Verwijderd |
+| --- | --- | ---: | ---: |
+| index.html | Aangepast | 12 | 1 |
+
+</details>
 <!-- arhc-weblab:log:end -->

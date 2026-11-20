@@ -18,7 +18,7 @@
             const lastname = document.getElementById('lastname');
             const tv = document.getElementById('tv')
             const lln = document.getElementById('lln')
-            const API = ' https://storage.arhc.informatica.gsf.nl/api';
+            const API = '/api';
             const KEY = 'ece65a867a42372a7ee576246a9dd93fbb8246c4b6d24b01';
             if (name.value && name.value.trim() !== '' && year.value !== "none") {
                 if (lastname.value && lastname.value.trim() !== ''){
@@ -37,6 +37,16 @@
                     }
                 }
             }
+        }
+        function logdata(){
+          const API = '/api';
+          const KEY = 'ece65a867a42372a7ee576246a9dd93fbb8246c4b6d24b01';
+          async function allesOphalen() {
+            const r = await fetch(API + '/data',{ headers: 
+            { 'X-API-Key': KEY } 
+            });
+            const j = await r.json();
+            console.log(j.data);
         }
     </script>
 </head>
@@ -82,6 +92,7 @@
         <br>
         <button type="submit" onclick="confirm()">Aanmelden</button>
     </div>
+    <button onclick="logdata()"></button>
     <title id="success" style="display: none; font-size: larger; font-weight: bolder;"></title>
 </body>
 </html>
