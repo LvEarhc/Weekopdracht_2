@@ -48,7 +48,7 @@
         <button type="submit" onclick="confirm()">Aanmelden</button>
     </div>
     <button onclick="logdata()">Fetch🐶 Data</button>
-    <title id="success" style="display: none; font-size: larger; font-weight: bolder;"></title>
+    <h1 id="success" style="display: none; font-size: larger; font-weight: bolder;"></h1>
         <script>
         function openmenu(){
             if (document.getElementById("signin").style.display=="block" && document.getElementById("success").style.display=="none"){
@@ -91,7 +91,7 @@
             { 'X-API-Key': KEY } 
             });
             const j = await r.json();
-            console.log(j.data);
+            console.log("Test"+j.data);
         }
         }
     </script>
