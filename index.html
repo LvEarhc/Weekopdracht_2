@@ -86,9 +86,11 @@
         function logdata(){
           'ece65a867a42372a7ee576246a9dd93fbb8246c4b6d24b01';
           async function allesOphalen() {
+            console.log("huh")
             const r = await fetch(API + '/data',{ headers: 
             { 'X-API-Key': KEY } 
             });
+            console.log("huh2")
             const j = await r.json();
             console.log("Test"+j.data);
         }
