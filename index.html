@@ -47,11 +47,8 @@
         <br>
         <button type="submit" onclick="confirm()">Aanmelden</button>
     </div>
-    <button onclick="logdata()">Fetch🐶 Data</button>
     <h1 id="success" style="display: none; font-size: larger; font-weight: bolder;"></h1>
         <script>
-        const KEY = 'ece65a867a42372a7ee576246a9dd93fbb8246c4b6d24b01';
-        const API = 'https://lvearhc.github.io/Weekopdracht_2/';
         function openmenu(){
             if (document.getElementById("signin").style.display=="block" && document.getElementById("success").style.display=="none"){
                 document.getElementById("signin").style.display="none";
@@ -72,28 +69,8 @@
                     document.getElementById("begin").style.display="none";
                     document.getElementById("success").style.display="block";
                     document.getElementById("success").innerHTML="Je bent nu aangemeld als "+name.value+" "+tv.value+" "+lastname.value+" onder het leerlingnummer "+lln.value;
-                    async function opslaan() {
-                        await fetch(API + '/data', {
-                          method: 'POST',
-                          headers: { 'X-API-Key': KEY, 'Content-Type': 'application/json' },
-                          body: JSON.stringify({ key: 'gegevens', value: "Naam: " + name.value+" "+tv.value+" " +lastname.value+". LLN: "+lln.value})
-                        })
-                      }
-                    }
                 }
             }
-        }
-        function logdata(){
-          console.log("bug location test")
-          async function allesOphalen() {
-            console.log("huh")
-            const r = await fetch(API + '/data',{ headers: 
-            { 'X-API-Key': KEY } 
-            });
-            console.log("huh2")
-            const j = await r.json();
-            console.log("Test"+j.data);
-        }
         }
     </script>
 </body>
