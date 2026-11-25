@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codeclub</title>
+            <script>
+        function openmenu(){
+            if (document.getElementById("signin").style.display=="block" && document.getElementById("success").style.display=="none"){
+                document.getElementById("signin").style.display="none";
+            } else {
+                document.getElementById("signin").style.display="block";
+            }
+        }
+        function confirm(){
+            const year = document.getElementById('year');
+            const name = document.getElementById('name');
+            const lastname = document.getElementById('lastname');
+            const tv = document.getElementById('tv')
+            const lln = document.getElementById('lln')
+            if (name.value && name.value.trim() !== '' && year.value !== "none") {
+                if (lastname.value && lastname.value.trim() !== ''){
+                    if (lln.value && lln.value.trim() !== ''){
+                    document.getElementById("signin").style.display="none";
+                    document.getElementById("begin").style.display="none";
+                    document.getElementById("success").style.display="block";
+                    document.getElementById("success").innerHTML="Je bent nu aangemeld als "+name.value+" "+tv.value+" "+lastname.value+" onder het leerlingnummer "+lln.value;
+                }
+            }
+        }
+    </script>
 </head>
 <body style="text-align: center; align-items: center; background-color: rgb(228, 255, 232); height: 1000px;">
     <img src="ARHC.jpeg" alt="" style="outline: auto;">
@@ -48,30 +73,5 @@
         <button type="submit" onclick="confirm()">Aanmelden</button>
     </div>
     <h1 id="success" style="display: none; font-size: larger; font-weight: bolder;"></h1>
-        <script>
-        function openmenu(){
-            if (document.getElementById("signin").style.display=="block" && document.getElementById("success").style.display=="none"){
-                document.getElementById("signin").style.display="none";
-            } else {
-                document.getElementById("signin").style.display="block";
-            }
-        }
-        function confirm(){
-            const year = document.getElementById('year');
-            const name = document.getElementById('name');
-            const lastname = document.getElementById('lastname');
-            const tv = document.getElementById('tv')
-            const lln = document.getElementById('lln')
-            if (name.value && name.value.trim() !== '' && year.value !== "none") {
-                if (lastname.value && lastname.value.trim() !== ''){
-                    if (lln.value && lln.value.trim() !== ''){
-                    document.getElementById("signin").style.display="none";
-                    document.getElementById("begin").style.display="none";
-                    document.getElementById("success").style.display="block";
-                    document.getElementById("success").innerHTML="Je bent nu aangemeld als "+name.value+" "+tv.value+" "+lastname.value+" onder het leerlingnummer "+lln.value;
-                }
-            }
-        }
-    </script>
 </body>
 </html>
