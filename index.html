@@ -17,7 +17,7 @@
     <p></p>
     <br>
     <br>
-    <button id="begin" onclick="openmenu" style="width: 100px; height: 50px; font-size: 16px; text-align: center; font-weight: bolder; background-color:rgb(0, 0, 0); color: rgb(255, 255, 255);">Aanmelden</button>
+    <button id="begin" onclick="openmenu()" style="width: 100px; height: 50px; font-size: 16px; text-align: center; font-weight: bolder; background-color:rgb(0, 0, 0); color: rgb(255, 255, 255);">Aanmelden</button>
     <br>
     <br>
     <div id="signin" style="display: none; outline: auto; background-color:rgb(99, 255, 115); block-size: 450px; inline-size: 200px; margin: 0 auto; display: none; align-items: center; justify-content: center;">
@@ -48,7 +48,7 @@
         <button type="submit" onclick="confirm()">Aanmelden</button>
     </div>
     <h1 id="success" style="display: none; font-size: larger; font-weight: bolder;"></h1>
-                  <script>
+    <script>
         function openmenu(){
             if (document.getElementById("signin").style.display=="block" && document.getElementById("success").style.display=="none"){
                 document.getElementById("signin").style.display="none";
